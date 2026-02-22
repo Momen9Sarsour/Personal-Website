@@ -26,18 +26,19 @@ class DashboardController extends Controller
         return view('dashboard.messages.show', compact('messages'));
     }
 
-    function settings(Setting $settings)
+    function settings()
     {
+        $settings = Setting::pluck('value', 'key')->toArray();
+        // dd($settings);
         return view('dashboard.settings', compact('settings'));
     }
 
     function settings_save(Request $request)
     {
-        // dd($request->all());
         $settings = $request->except('_token', '_method');
         // dd($settings);
         foreach ($settings as $key => $value) {
-            Setting::updatedOrCreate([
+            Setting::updateOrCreate([
                 'key' => $key,
             ], [
                 'value' => $value,
