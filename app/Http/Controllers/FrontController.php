@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactUs;
 use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Language;
@@ -54,6 +55,10 @@ class FrontController extends Controller
             'message' => $request->message,
         ]);
 
+
+
+        // Send messages to admin mail
+        Mail::to('momensarsour66@gmail.com')->send(new ContactUs($request->except('_token')));
 
         flash()->success('Your message was sent successfully!');
 
