@@ -20,10 +20,9 @@ class DashboardController extends Controller
         return view('dashboard.messages.index', compact('messages'));
     }
 
-    function messages_show(Message $messages)
+    function messages_show(Message $message)
     {
-        $messages = Message::latest()->paginate(10);
-        return view('dashboard.messages.show', compact('messages'));
+        return view('dashboard.messages.show', compact('message'));
     }
 
     function settings()

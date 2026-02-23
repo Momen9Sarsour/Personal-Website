@@ -1,0 +1,26 @@
+users
+-- id | name | email | phone | password
+
+settings
+-- id | key | value
+
+experiences
+-- id | title | company | location | start_date | end_start | description
+
+educations
+-- id | collage | location | degree | start_date | end_date | description
+
+skills 
+-- id | title 
+
+languages
+-- id | title 
+
+projects 
+-- id | title | description | image | link 
+
+messages
+-- id | name | email | phone | message 
+
+
+
