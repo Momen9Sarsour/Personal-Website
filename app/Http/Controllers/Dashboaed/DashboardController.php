@@ -28,7 +28,7 @@ class DashboardController extends Controller
     function settings()
     {
         $settings = Setting::pluck('value', 'key')->toArray();
-        // dd($settings);
+
         return view('dashboard.settings', compact('settings'));
     }
 
